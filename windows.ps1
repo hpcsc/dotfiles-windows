@@ -6,7 +6,7 @@ Enable-WindowsOptionalFeature -Online -All -FeatureName `
 -NoRestart
 
 $storeAppsToRemove = "Microsoft.BingNews", "Microsoft.BingFinance", "Microsoft.BingSports", "Microsoft.BingWeather", "Microsoft.MicrosoftOfficeHub", "Microsoft.ZuneMusic", "Microsoft.ZuneVideo"
-$storeAppsToRemove += "king.com.CandyCrushSodaSaga", "Facebook.Facebook", 
+$storeAppsToRemove += "king.com.CandyCrushSodaSaga", "Facebook.Facebook"
 Write-Host "Removing following Store Apps: "$storeAppsToRemove -ForegroundColor "Yellow"
 
 Get-AppxPackage  -AllUsers | Where Name -in $storeAppsToRemove | Remove-AppxPackage

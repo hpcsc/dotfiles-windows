@@ -5,7 +5,3 @@ cmd /c mklink /H (Join-Path $Env:APPDATA "Code\User\keybindings.json") ".\vscode
 
 Write-Host "Restoring ConEmu Settings..." -ForegroundColor "Yellow"
 cmd /c mklink /H (Join-Path $Env:programfiles "ConEmu\ConEmu.xml") ".\conemu\ConEmu.xml"
-
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -All
