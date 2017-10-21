@@ -9,7 +9,7 @@ $storeAppsToRemove = "Microsoft.BingNews", "Microsoft.BingFinance", "Microsoft.B
 $storeAppsToRemove += "king.com.CandyCrushSodaSaga", "Facebook.Facebook"
 Write-Host "Removing following Store Apps: "$storeAppsToRemove -ForegroundColor "Yellow"
 
-Get-AppxPackage  -AllUsers | Where Name -in $storeAppsToRemove | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where DisplayName -in $storeAppsToRemove | Remove-AppxProvisionedPackage -Online
+Get-AppxPackage  -AllUsers | Where-Object Name -in $storeAppsToRemove | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | Where-Object DisplayName -in $storeAppsToRemove | Remove-AppxProvisionedPackage -Online
 
 Remove-Variable storeAppsToRemove
