@@ -11,5 +11,8 @@ An attempt to automate installation of essential softwares and settings for new 
     ```
 
 2. Clone this repository
-3. Open Powershell as Administrator
-4. Execute `install.ps1`
+3. Open Powershell as Administrator, navigate to cloned directory, execute:
+
+    ```
+    .\bootstrap.ps1
+    ```
