@@ -1,11 +1,12 @@
 # install Chocolatey
 Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+choco feature enable -n=allowGlobalConfirmation
 
 # essential software
-choco install -y googlechrome firefox 7zip.install dropbox 1password vlc gom-player malwarebytes foxitreader
+choco install googlechrome firefox 7zip.install dropbox 1password vlc malwarebytes foxitreader
 
 # development tools
-choco install -y VisualStudioCode linqpad sourcetree docker-for-windows nvm conemu jetbrainstoolbox velocity boostnote
+choco install VisualStudioCode linqpad sourcetree docker-for-windows nvm conemu jetbrainstoolbox velocity boostnote jdk8
 
 # restore vscode settings
 cmd /c mklink /H (Join-Path $Env:APPDATA "Code\User\settings.json") ".\vscode\settings.json"
