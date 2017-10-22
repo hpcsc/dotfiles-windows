@@ -2,6 +2,12 @@
 
 An attempt to automate installation of essential softwares and settings for new Windows setup
 
+## To backup VSCode extensions
+
+```
+code --list-extensions > vscode-extensions
+```
+
 ## For a new Windows setup
 
 1. Install Git for Windows
