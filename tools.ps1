@@ -17,3 +17,8 @@ if (!Test-Path "Directory/Background/Shell/ConEmu Here") {
     New-Item -Path "Directory/Background/Shell/ConEmu Here/command" -Value "`"C:\\Program Files\\ConEmu\\ConEmu64.exe`" -Dir %V"
 }
 Pop-Location # restore to previous path
+
+Write-Host "Updating Powershell Profile..." -ForegroundColor "Yellow"
+$powershellFolder = (Resolve-Path ".\powershell").Path
+Add-Content $PROFILE "# Loading custom functions"
+Add-Content $PROFILE "Get-ChildItem `"$powershellFolder\*.ps1`" | %{.`$_}"
