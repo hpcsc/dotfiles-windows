@@ -29,7 +29,9 @@
     "terminal.integrated.scrollback": 2000,
     "workbench.colorCustomizations": {
         "editor.selectionBackground": "#135564",
-        "editor.selectionHighlightBackground": "#135564"
+        "editor.selectionHighlightBackground": "#135564",
+        "editor.lineHighlightBackground": "#383e4a"
     },
-    "powershell.integratedConsole.showOnStartup": false
+    "powershell.integratedConsole.showOnStartup": false,
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}"
 }
