@@ -14,6 +14,13 @@ Get-AppXProvisionedPackage -Online | Where-Object DisplayName -in $storeAppsToRe
 
 Remove-Variable storeAppsToRemove
 
+Write-Host "Mapping Capslock to LeftCtrl..." -ForegroundColor "Yellow"
+$scancodeMapHexValue = "00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00".Split(',') | ForEach-Object { "0x$_"}
+$keyboardLayout = 'HKLM:\System\CurrentControlSet\Control\Keyboard Layout'
+New-ItemProperty -Path $keyboardLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$scancodeMapHexValue)
+Remove-Variable scancodeMapHexValue
+Remove-Variable keyboardLayout
+
 Write-Host "Updating Windows Explorer Settings..." -ForegroundColor "Yellow"
 $explorerAdvancedKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
 Set-ItemProperty $explorerAdvancedKey LaunchTo 1            # Set "Open File Explorer to" to "This PC" instead of "Quick access"
