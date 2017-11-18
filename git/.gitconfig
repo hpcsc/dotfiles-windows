@@ -1,0 +1,12 @@
+[core]
+	editor = code --wait
+	autocrlf = true
+[credential]
+	helper = manager
+[user]
+	name = David Nguyen
+	email = hpcsc@users.noreply.github.com
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true

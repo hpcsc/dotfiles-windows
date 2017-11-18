@@ -6,6 +6,9 @@ cmd /c mklink (Join-Path $Env:APPDATA "Code\User\keybindings.json") (Resolve-Pat
 Write-Host "Installing Visual Studio Code Extensions..." -ForegroundColor "Yellow"
 Get-Content ./vscode-extensions | Foreach-Object { code --install-extension $_ }
 
+Write-Host "Restoring gitconfig..." -ForegroundColor "Yellow"
+cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gitconfig").Path
+
 Write-Host "Restoring ConEmu Settings..." -ForegroundColor "Yellow"
 cmd /c mklink /H (Join-Path $Env:programfiles "ConEmu\ConEmu.xml") (Resolve-Path ".\conemu\ConEmu.xml").Path
 # Create context menu to open ConEmu when right clicking any folder
