@@ -1,0 +1,11 @@
+eamodio.gitlens
+Ionide.Ionide-fsharp
+jcanero.hoogle-vscode
+justusadam.language-haskell
+lukehoban.Go
+maptz.camelcasenavigation
+metaseed.metago
+ms-vscode.csharp
+ms-vscode.PowerShell
+robertohuertasm.vscode-icons
+Vans.haskero

@@ -4,7 +4,7 @@ cmd /c mklink (Join-Path $Env:APPDATA "Code\User\settings.json") (Resolve-Path "
 cmd /c mklink (Join-Path $Env:APPDATA "Code\User\keybindings.json") (Resolve-Path ".\vscode\keybindings.json").Path
 
 Write-Host "Installing Visual Studio Code Extensions..." -ForegroundColor "Yellow"
-Get-Content ./vscode-extensions | Foreach-Object { code --install-extension $_ }
+Get-Content ./vscode-extensions.txt | Foreach-Object { code --install-extension $_ }
 
 Write-Host "Restoring gitconfig..." -ForegroundColor "Yellow"
 cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gitconfig").Path
