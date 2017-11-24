@@ -17,8 +17,8 @@ function glg() {
     git log --oneline --graph --decorate
 }
 
-function gl() {
-    git log --graph --decorate
+function gloc() {
+    git log --topo-order --graph --decorate --pretty=format:"%C(green)%h%C(reset) %s%C(red)%d%C(reset)"
 }
 
 function gfr() {
