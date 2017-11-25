@@ -10,7 +10,7 @@ Write-Host "Restoring gitconfig..." -ForegroundColor "Yellow"
 cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gitconfig").Path
 
 Write-Host "Restoring ConEmu Settings..." -ForegroundColor "Yellow"
-cmd /c mklink /H (Join-Path $Env:programfiles "ConEmu\ConEmu.xml") (Resolve-Path ".\conemu\ConEmu.xml").Path
+cmd /c mklink (Join-Path $Env:programfiles "ConEmu\ConEmu.xml") (Resolve-Path ".\conemu\ConEmu.xml").Path
 # Create context menu to open ConEmu when right clicking any folder
 New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR # create new drive for registry HKEY_CLASSES_ROOT
 Push-Location # save current path
