@@ -23,3 +23,14 @@ code --list-extensions > vscode-extensions
     .\bootstrap.ps1
     ```
 4. Install `IntelliJ`, `Rider` using `Jetbrains Toolbox` and import settings manually from `Jetbrains` folder
+
+## Optional Tools
+
+### Explorer++
+
+- Download `Explorer++`
+- Create symlink to config file
+
+    ```
+    cmd /c mklink Link\to\explorer++\folder\config.xml (Resolve-Path ".\explorer++\config.xml").Path
+    ```
