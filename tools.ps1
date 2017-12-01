@@ -9,17 +9,17 @@ Get-Content ./vscode-extensions.txt | Foreach-Object { code --install-extension 
 Write-Host "Restoring gitconfig..." -ForegroundColor "Yellow"
 cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gitconfig").Path
 
-Write-Host "Restoring ConEmu Settings..." -ForegroundColor "Yellow"
-cmd /c mklink (Join-Path $Env:programfiles "ConEmu\ConEmu.xml") (Resolve-Path ".\conemu\ConEmu.xml").Path
-# Create context menu to open ConEmu when right clicking any folder
-New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR # create new drive for registry HKEY_CLASSES_ROOT
-Push-Location # save current path
-Set-Location HKCR:
-if (!Test-Path "Directory/Background/Shell/ConEmu Here") {
-    New-Item -Path "Directory/Background/Shell" -Name "ConEmu Here"
-    New-Item -Path "Directory/Background/Shell/ConEmu Here/command" -Value "`"C:\\Program Files\\ConEmu\\ConEmu64.exe`" -Dir %V"
-}
-Pop-Location # restore to previous path
+Write-Host "Restoring Hyper Settings..." -ForegroundColor "Yellow"
+cmd /c mklink (Join-Path $Env:USERPROFILE ".hyper.js") (Resolve-Path ".\hyper\.hyper.js").Path
+# Create context menu to open Hyper when right clicking any folder
+# New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR # create new drive for registry HKEY_CLASSES_ROOT
+# Push-Location # save current path
+# Set-Location HKCR:
+# if (!Test-Path "Directory/Background/Shell/ConEmu Here") {
+#     New-Item -Path "Directory/Background/Shell" -Name "ConEmu Here"
+#     New-Item -Path "Directory/Background/Shell/ConEmu Here/command" -Value "`"C:\\Program Files\\ConEmu\\ConEmu64.exe`" -Dir %V"
+# }
+# Pop-Location # restore to previous path
 
 Write-Host "Updating Powershell Profile..." -ForegroundColor "Yellow"
 $powershellFolder = (Resolve-Path ".\powershell").Path
