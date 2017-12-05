@@ -1,5 +1,5 @@
 function PSAdmin() {
-    As-Admin("powershell")
+    Start-Process powershell "-NoExit", "-Command", "Set-Location $((Resolve-Path .\).Path)" -Verb runAs
 }
 
 function HyperAdmin() {
