@@ -11,6 +11,10 @@ cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gi
 
 Write-Host "Restoring Hyper Settings..." -ForegroundColor "Yellow"
 cmd /c mklink (Join-Path $Env:USERPROFILE ".hyper.js") (Resolve-Path ".\hyper\.hyper.js").Path
+Write-Host "Add Hyper to User Path Variable..." -ForegroundColor "Yellow"
+. (Resolve-Path ".\powershell\misc.ps1").Path
+Update-User-Variable (Join-Path $Env:LOCALAPPDATA "hyper")
+
 # Create context menu to open Hyper when right clicking any folder
 # New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR # create new drive for registry HKEY_CLASSES_ROOT
 # Push-Location # save current path
