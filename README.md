@@ -22,7 +22,7 @@ code --list-extensions > vscode-extensions
     ```
     .\bootstrap.ps1
     ```
-4. Install `IntelliJ`, `Rider` using `Jetbrains Toolbox` and import settings manually from `Jetbrains` folder
+4. Install `IntelliJ`, `Rider` using `Jetbrains Toolbox` and import settings from github: https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository
 
 ## Optional Tools
 
