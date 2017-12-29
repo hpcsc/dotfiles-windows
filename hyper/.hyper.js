@@ -4,9 +4,9 @@
 
 module.exports = {
   config: {
-    // Choose either "stable" for receiving highly polished,
-    // or "canary" for less polished but more frequent updates
-    updateChannel: 'stable',
+    // Choose either 'stable' for receiving highly polished,
+    // or 'canary' for less polished but more frequent updates
+    updateChannel: 'canary',
 
     // default font size in pixels for all tabs
     fontSize: 14,
@@ -101,6 +101,16 @@ module.exports = {
 
     windowSize: [1000, 600],
 
+    // if true, on right click selected text will be copied or pasted if no
+    // selection is present (true by default on Windows)
+    // quickEdit: true
+    quickEdit: false,
+
+    // URL to custom bell
+    // bellSoundURL: 'http://example.com/bell.mp3',
+
+    // for advanced config flags please refer to https://hyper.is/#cfg
+
     hyperTabs: {
       trafficButtons: true,
       border: true,
@@ -108,15 +118,6 @@ module.exports = {
       closeAlign: 'right',
       activityPulse: false
     }
-
-    // if true, on right click selected text will be copied or pasted if no
-    // selection is present (true by default on Windows)
-    // quickEdit: true
-
-    // URL to custom bell
-    // bellSoundURL: 'http://example.com/bell.mp3',
-
-    // for advanced config flags please refer to https://hyper.is/#cfg
   },
 
   // a list of plugins to fetch and install from npm
@@ -125,7 +126,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-oceans16', 'hyper-tabs-enhanced', 'hypercwd'],
+  plugins: ['hyper-oceans16', 'hyper-tabs-enhanced'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -141,7 +142,25 @@ module.exports = {
     'pane:prev': 'ctrl+[',
     'pane:close': 'ctrl+w',
     'tab:new': 'ctrl+t',
-    'tab:next': 'ctrl+alt+]',
-    'tab:prev': 'ctrl+alt+['
+    'tab:next': [
+      'ctrl+shift+]',
+      'ctrl+shift+right',
+      'ctrl+alt+right',
+      'ctrl+tab',
+      'ctrl+alt+]'
+    ],
+    'tab:prev': [
+      'ctrl+shift+[',
+      'ctrl+shift+left',
+      'ctrl+alt+left',
+      'ctrl+shift+tab',
+      'ctrl+alt+['
+    ],
+    'editor:undo': 'ctrl+z',
+    'editor:redo': 'ctrl+shift+z',
+    'editor:cut': 'ctrl+x',
+    'editor:copy': 'ctrl+c',
+    'editor:paste': 'ctrl+v',
+    'editor:clearBuffer': 'ctrl+k'
   }
 };
