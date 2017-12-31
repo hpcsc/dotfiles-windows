@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<config>
+  <appinfo>
+    <name>Explorer Panel</name>
+    <version>3.9</version>
+    <copyright>Mathias Svensson 2014</copyright>
+  </appinfo>
+  <colors>
+    <backgroundhighlight value="1"/>
+    <override_windows_bg value="0">
+      <alternating value="0"/>
+      <active color="ffffe0"/>
+      <inactive color="e6e6fa"/>
+      <active_alt color="fefada"/>
+      <inactive_alt color="e6e6fb"/>
+    </override_windows_bg>
+    <item_specific_bg_color value="1">
+      <use_files_bg value="1"/>
+      <use_folders_bg value="1"/>
+    </item_specific_bg_color>
+    <focusrect value="000000"/>
+    <files>
+      <normal foreground="$COLOR_WINDOWTEXT" background="-1"/>
+      <focus foreground="$COLOR_WINDOWTEXT" background="-1"/>
+      <selected foreground="$COLOR_HIGHLIGHTTEXT" background="$COLOR_HIGHLIGHT"/>
+      <checked foreground="$COLOR_HIGHLIGHTTEXT" background="$COLOR_HIGHLIGHT"/>
+      <checkedfocus foreground="$COLOR_HIGHLIGHTTEXT" background="$COLOR_HIGHLIGHT"/>
+    </files>
+    <folders>
+      <normal foreground="$COLOR_WINDOWTEXT" background="-1"/>
+      <focus foreground="$COLOR_WINDOWTEXT" background="-1"/>
+      <selected foreground="$COLOR_HIGHLIGHTTEXT" background="$COLOR_HIGHLIGHT"/>
+      <checked foreground="$COLOR_HIGHLIGHTTEXT" background="$COLOR_HIGHLIGHT"/>
+      <checkedfocus foreground="$COLOR_HIGHLIGHTTEXT" background="$COLOR_HIGHLIGHT"/>
+    </folders>
+    <forcefocusrect value="1"/>
+    <special value="0">
+      <autocolor value="1"/>
+      <autocolorvalue value="135"/>
+    </special>
+    <rulebasedoverridecolors value="0"/>
+    <tweak>
+      <autofadeselection value="1"/>
+    </tweak>
+  </colors>
+  <layout>
+    <GridLines value="0">
+      <VLines value="1"/>
+      <HLines value="1"/>
+    </GridLines>
+    <CheckBoxes value="0"/>
+    <Icons value="1">
+      <Associated value="1"/>
+      <Exe value="1"/>
+      <Link value="1"/>
+      <Overlay value="1"/>
+      <OverlayRemote value="0"/>
+      <ShowAssociatedIcon value="1"/>
+      <ShowExeIcon value="1"/>
+      <ShowLinkIcon value="0"/>
+      <Size value="1"/>
+      <AutoScale value="1"/>
+    </Icons>
+    <CalcFolderSize>
+      <MarkingWithSpace value="1"/>
+    </CalcFolderSize>
+    <ShowFileSizeType value="0"/>
+    <FileSize value="K"/>
+    <FileExt value="F"/>
+    <TagFolders value="0"/>
+    <FolderTagInSize value="0"/>
+    <DisableFocusRect value="0"/>
+    <AutoAdjust value="1"/>
+    <AdjustLongNames value="1"/>
+    <AutoSizeColumns value="1"/>
+    <ForwardUnAssignedKeys value="1"/>
+    <AnyKeySearch value="1"/>
+    <SearchBox value="1"/>
+    <SearchMode value="0"/>
+    <SortNatural value="1"/>
+    <Tooltip value="2"/>
+    <ShowHidden value="0"/>
+    <ShowSystem value="0"/>
+    <DateMode value="1"/>
+    <ShowLinkTargetInName value="1"/>
+    <ShowFreespaceAs value="0"/>
+    <fonts>
+      <FreeSpace FontName="Segoe UI" SizePt="12" Style="" Size="11"/>
+      <Path FontName="Segoe UI" SizePt="12" Style="" Size="11"/>
+      <FileList FontName="Segoe UI" SizePt="12" Style="" Size="8"/>
+      <Status FontName="Segoe UI" SizePt="12" Style="" Size="11"/>
+    </fonts>
+    <SelectOnNavigate value="1"/>
+    <UnselectOnSingleSelect value="1"/>
+    <FileCmdToolBar value="1"/>
+    <GlobalDriveBar value="1">
+      <OwnRow value="0"/>
+      <SpecialFolders value="0"/>
+      <VirtualDevices value="0"/>
+      <Cloud value="0"/>
+    </GlobalDriveBar>
+    <RememberSelectedOnPathChange value="1"/>
+    <RememberItemInFocusOnPathChange value="1"/>
+    <SelectionRectangle value="1"/>
+    <UnselectWhenStartingFileOp value="1"/>
+    <tab>
+      <icon value="1"/>
+      <tabnamelook value="0"/>
+      <newtabiflocked value="0"/>
+    </tab>
+    <default>
+      <sortby value="0"/>
+      <sortorder value="0"/>
+      <ViewMode value="3"/>
+      <FolderTree value="1"/>
+      <Path value="C:\"/>
+    </default>
+    <FileSizeDecimals value="1"/>
+    <listmode>
+      <Tooltip value="2"/>
+      <Filename value="1"/>
+    </listmode>
+    <thumbnail>
+      <Size value="96"/>
+      <WheelZoom value="1"/>
+      <PictureFrame value="1"/>
+      <TextOverlay value="0"/>
+      <ScrollMode value="V"/>
+      <ImageText value="1"/>
+      <Filename value="2"/>
+    </thumbnail>
+    <thumbnaildetail>
+      <HighlightName value="1"/>
+    </thumbnaildetail>
+    <flatview>
+      <AddPathColumn value="0"/>
+      <IncludeFolders value="0"/>
+    </flatview>
+    <SortLanguageAware value="0"/>
+    <SortSeparateFilesFolders value="1"/>
+    <SortFoldersByName value="0"/>
+    <showdate value="1"/>
+    <showtime value="1"/>
+    <timeformat_sec value="0"/>
+    <timeformat_ms value="0"/>
+    <customdatetimeformat value="0"/>
+    <customdateformat value="yyyy-MM-dd"/>
+    <customtimeformat value="HH:mm"/>
+    <SearchSubString value="0"/>
+    <InlineRename>
+      <MoveToNextUsingArrowKeys value="1"/>
+      <RenameBeforeMovingToNext value="1"/>
+      <MoveToNextUsingEnterKey value="0"/>
+      <RenameSimilar value="0"/>
+    </InlineRename>
+    <FolderTree>
+      <ExpandCurrent value="0"/>
+      <ExpandOnHover value="1"/>
+      <AllowFolderColors value="1"/>
+      <DevicesFilter value="*"/>
+    </FolderTree>
+    <RescanAlways value="0"/>
+    <RefreshFileColoringOnForceRefresh value="1"/>
+    <ContextMenuOnDotDot value="1"/>
+    <SendToCmdLineTakeFocus value="0"/>
+    <RowPaddingList value="1"/>
+    <RowPaddingTree value="1"/>
+    <TooltipDelay value="1000"/>
+    <TooltipTimeout value="7"/>
+    <DriveBar value="0"/>
+    <DriveBarLabel value="1"/>
+    <DriveBarLabelOnRight value="1"/>
+    <devicedropdown value="1">
+      <RememberLastSubPath value="0"/>
+      <CommonSpecialFolders value="1"/>
+      <ExtendedSpecialFolders value="1"/>
+      <VirtualDevices value="1"/>
+      <Cloud value="1"/>
+    </devicedropdown>
+    <freespacearea value="1">
+      <showusedspace value="0"/>
+      <showsizeas value="0"/>
+      <kbsize value="1000"/>
+    </freespacearea>
+    <selectionstatus>
+      <showsizeas value="0"/>
+      <sizeunit value="2"/>
+      <decimals value="0"/>
+      <kbsize value="1024"/>
+    </selectionstatus>
+    <ResetFilterOnPathChange value="0"/>
+    <RestorePathFilterOnReturn value="0"/>
+    <buttons>
+      <foldertree value="1"/>
+      <gotoroot value="1"/>
+      <gotoparent value="1"/>
+      <reload value="1"/>
+      <disconnect value="0"/>
+      <viewmode value="1"/>
+    </buttons>
+    <tweak>
+      <devicefilter>
+        <globaltoolbar value="0">
+          <floppy value="0"/>
+          <localdrives value="1"/>
+          <disc value="1"/>
+          <removable value="1"/>
+          <remote value="1"/>
+          <unc value="1"/>
+          <virtualdevices value="1"/>
+          <devicefilter value="*"/>
+          <desktop value="1"/>
+          <documents value="1"/>
+          <publicdocuments value="1"/>
+          <downloads value="1"/>
+          <music value="1"/>
+          <pictures value="1"/>
+          <video value="1"/>
+          <onedrive value="1"/>
+          <dropbox value="1"/>
+        </globaltoolbar>
+        <paneltoolbar value="0">
+          <floppy value="0"/>
+          <localdrives value="1"/>
+          <disc value="1"/>
+          <removable value="1"/>
+          <remote value="1"/>
+          <unc value="1"/>
+          <virtualdevices value="1"/>
+          <devicefilter value="*"/>
+          <desktop value="1"/>
+          <documents value="1"/>
+          <publicdocuments value="1"/>
+          <downloads value="1"/>
+          <music value="1"/>
+          <pictures value="1"/>
+          <video value="1"/>
+          <onedrive value="1"/>
+          <dropbox value="1"/>
+        </paneltoolbar>
+        <paneldropdown value="0">
+          <floppy value="0"/>
+          <localdrives value="1"/>
+          <disc value="1"/>
+          <removable value="1"/>
+          <remote value="1"/>
+          <unc value="1"/>
+          <virtualdevices value="1"/>
+          <devicefilter value="*"/>
+          <desktop value="1"/>
+          <documents value="1"/>
+          <publicdocuments value="1"/>
+          <downloads value="1"/>
+          <music value="1"/>
+          <pictures value="1"/>
+          <video value="1"/>
+          <onedrive value="1"/>
+          <dropbox value="1"/>
+        </paneldropdown>
+        <foldertree value="0">
+          <floppy value="0"/>
+          <localdrives value="1"/>
+          <disc value="1"/>
+          <removable value="1"/>
+          <remote value="1"/>
+          <unc value="1"/>
+          <virtualdevices value="1"/>
+          <devicefilter value="*"/>
+        </foldertree>
+      </devicefilter>
+    </tweak>
+    <DbgSelection value="0"/>
+    <AutoSortOnRename value="0"/>
+  </layout>
+  <tweak>
+    <CacheRowData value="0"/>
+  </tweak>
+  <save>
+    <path value="0"/>
+    <onlylocal value="0"/>
+    <sort value="0"/>
+    <onlylocked value="0"/>
+    <itemfocus value="0"/>
+  </save>
+  <selection>
+    <comparefolders>
+      <files value="1"/>
+      <folders value="0"/>
+    </comparefolders>
+  </selection>
+  <mouse>
+    <left>
+      <click value="0"/>
+      <dblclick value="3"/>
+      <clickhold value="0"/>
+      <clickwait value="2"/>
+    </left>
+    <right>
+      <click value="6"/>
+      <dblclick value="0"/>
+      <clickhold value="0"/>
+      <clickwait value="0"/>
+    </right>
+    <middle>
+      <click value="8"/>
+      <dblclick value="0"/>
+      <clickhold value="0"/>
+      <clickwait value="0"/>
+    </middle>
+    <extra1>
+      <click value="10"/>
+      <dblclick value="0"/>
+      <clickhold value="0"/>
+      <clickwait value="0"/>
+    </extra1>
+    <extra2>
+      <click value="11"/>
+      <dblclick value="0"/>
+      <clickhold value="0"/>
+      <clickwait value="0"/>
+    </extra2>
+    <rightbuttondrag value="1"/>
+    <clickonemptyarea_gotoparent value="0"/>
+    <clickonemptyrowarea_showparentmenu value="0"/>
+    <selectonhoverover value="0"/>
+    <selectonhoveroverdelay value="300"/>
+    <CustomAction1 value="0"/>
+    <CustomAction2 value="0"/>
+    <CustomAction3 value="0"/>
+    <CustomAction4 value="0"/>
+    <CustomAction5 value="0"/>
+    <pathfield>
+      <left>
+        <clickitem value="4"/>
+        <ctrlclickitem value="2"/>
+        <ctrlshiftclickitem value="3"/>
+        <ctrlclickanywhere value="0"/>
+      </left>
+      <right>
+        <clickitem value="2"/>
+        <ctrlclickitem value="0"/>
+        <ctrlshiftclickitem value="3"/>
+        <clicknoneitem value="5"/>
+        <clickanywhere value="0"/>
+        <ctrlclickanywhere value="1"/>
+      </right>
+    </pathfield>
+  </mouse>
+</config>
