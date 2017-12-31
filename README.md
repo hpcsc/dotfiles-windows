@@ -26,6 +26,23 @@ code --list-extensions > vscode-extensions
 
 ## Optional Tools
 
+### MultiCommander
+
+- Download MultiCommander (portable version) and put it in a location that doesn't require admin permission, .e.g. `C:\tools\MultiCommander`
+- Setup symlink to setting files
+
+```
+./MultiCommander/install.ps1 C:\tools\MultiCommander
+```
+
+- Pin MultiCommander to taskbar, modify `Target` in Properties to:
+
+```
+path\to\MultiCommander.exe -AutoRun="Split 100/0" C:\
+```
+
+This will open MultiCommander in 100/0 single split mode and at C:\ drive when starting up
+
 ### Explorer++
 
 - Download `Explorer++`
