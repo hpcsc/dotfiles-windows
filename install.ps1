@@ -3,7 +3,7 @@ Set-ExecutionPolicy Bypass; Invoke-Expression ((New-Object System.Net.WebClient)
 choco feature enable -n=allowGlobalConfirmation
 
 Write-Host "Installing essential softwares..." -ForegroundColor "Yellow"
-choco install googlechrome firefox 7zip.install dropbox 1password vlc malwarebytes foxitreader authy-desktop greenshot multicommander
+choco install googlechrome firefox 7zip.install dropbox 1password vlc malwarebytes foxitreader authy-desktop greenshot
 
 Write-Host "Installing development tools..." -ForegroundColor "Yellow"
-choco install VisualStudioCode linqpad sourcetree docker-for-windows dotnetcore-sdk nvm conemu jetbrainstoolbox velocity boostnote jdk8 hyper
+choco install VisualStudioCode linqpad docker-for-windows dotnetcore-sdk nvm jetbrainstoolbox velocity boostnote jdk8 hyper
