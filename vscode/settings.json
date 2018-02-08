@@ -4,15 +4,12 @@
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "terminal.integrated.shellArgs.osx": ["-l"],
-    "terminal.external.windowsExec": "ConEmu64.exe",
+    "terminal.external.windowsExec": "Hyper.exe",
     "terminal.integrated.shell.windows": "powershell.exe",
     "extensions.autoUpdate": true,
     "editor.renderIndentGuides": true,
     "editor.renderWhitespace": "boundary",
     "files.trimTrailingWhitespace": true,
-    "files.associations": {
-        "Vagrantfile": "ruby"
-    },
     "window.zoomLevel": 1,
     "files.insertFinalNewline": true,
     "vsicons.dontShowNewVersionMessage": true,
@@ -33,5 +30,6 @@
         "editor.lineHighlightBackground": "#383e4a"
     },
     "powershell.integratedConsole.showOnStartup": false,
-    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}"
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+    "workbench.list.openMode": "doubleClick"
 }
