@@ -7,7 +7,7 @@ function HyperAdmin() {
 }
 
 function As-Admin($processName) {
-    Start-Process $processName -Verb runAs
+    Start-Process $processName -WindowStyle hidden -Verb runAs
 }
 
 function Update-User-Variable($value) {
