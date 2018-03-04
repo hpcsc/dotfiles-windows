@@ -3,8 +3,12 @@ Write-Host "Restoring MultiCommander ($installLocation) Settings..." -Foreground
 
 function BackUpAndSymlink($folderRelativePath, $fileName) {
     $folderAbsolutePath=Join-Path $installLocation $folderRelativePath
-    Rename-Item (Join-Path $folderAbsolutePath $fileName) "$fileName.bk"
-    cmd /c mklink (Join-Path $folderAbsolutePath $fileName) (Resolve-Path ".\MultiCommander\$folderRelativePath\$fileName").Path
+    $destinationFile=Join-Path $folderAbsolutePath $fileName
+    if (Test-Path $destinationFile)
+    {
+        Rename-Item $destinationFile "$fileName.bk"
+    }
+    cmd /c mklink $destinationFile (Resolve-Path ".\MultiCommander\$folderRelativePath\$fileName").Path
 }
 
 BackUpAndSymlink "Config" "ExplorerPanel.xml"
