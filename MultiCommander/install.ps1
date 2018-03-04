@@ -10,4 +10,6 @@ function BackUpAndSymlink($folderRelativePath, $fileName) {
 BackUpAndSymlink "Config" "ExplorerPanel.xml"
 BackUpAndSymlink "Config" "MultiCommander.xml"
 BackUpAndSymlink "Config" "UserDefinedCommands.xml"
+BackUpAndSymlink "Config" "CustomKeymappings.xml"
+BackUpAndSymlink "Config" "MultiButtons.xml"
 BackUpAndSymlink "SessionConfig\Config" "MultiCommander.ini"
