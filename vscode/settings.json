@@ -31,5 +31,7 @@
     },
     "powershell.integratedConsole.showOnStartup": false,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
-    "workbench.list.openMode": "doubleClick"
+    "workbench.list.openMode": "doubleClick",
+    "editor.fontSize": 16,
+    "search.location": "panel"
 }
