@@ -2,7 +2,7 @@
 <config global="1">
   <appinfo>
     <name>MultiCommander</name>
-    <version>7.7.0.2404</version>
+    <version>8.3.0.2469</version>
   </appinfo>
   <modules folder="Extensions"/>
   <filesystem>
@@ -61,6 +61,7 @@
       <dropmoveshowdialog value="1"/>
       <fslinks value="1"/>
       <autoloadpreset value="1"/>
+      <skipemptyfolders value="0"/>
     </fileoperations>
     <confirmation>
       <overwriting value="1"/>
@@ -133,6 +134,7 @@
       <show value="0"/>
       <save value="0"/>
       <level value="1"/>
+      <extendedscanlog value="0"/>
     </filesystemscanning>
     <logwindow>
       <font FontName="Courier New" SizePt="9" Style=""/>
