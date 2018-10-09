@@ -24,14 +24,44 @@
     "explorer.openEditors.visible": 0,
     "editor.snippetSuggestions": "top",
     "terminal.integrated.scrollback": 2000,
-    "workbench.colorCustomizations": {
-        "editor.selectionBackground": "#135564",
-        "editor.selectionHighlightBackground": "#135564",
-        "editor.lineHighlightBackground": "#383e4a"
-    },
     "powershell.integratedConsole.showOnStartup": false,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     "workbench.list.openMode": "doubleClick",
     "editor.fontSize": 16,
-    "search.location": "panel"
+    "search.location": "panel",
+    "workbench.colorTheme": "NaturalContrast-HC",
+    "gitlens.keymap": "alternate",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "editor.tabCompletion": "on",
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.disableExtension": false,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "y"],
+            "after": ["o", "<Esc>"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<CR>"],
+            "after": ["<Esc>"]
+        }
+    ],
 }

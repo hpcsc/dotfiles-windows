@@ -2,10 +2,8 @@
 [
     { "key": "shift+ctrl+r",           "command": "workbench.action.tasks.runTask" },
     { "key": "ctrl+u ctrl+n",                "command": "workbench.action.files.newUntitledFile" },
-    { "key": "ctrl+`", "command": "workbench.action.terminal.toggleTerminal" },
-    { "key": "ctrl+`", "command": "workbench.action.terminal.focus", "when": "!terminalFocus" }, 
-    { "key": "alt+right", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },    
-    { "key": "alt+left", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },    
+    { "key": "alt+right", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
+    { "key": "alt+left", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
     { "key": "ctrl+w", "command": "workbench.action.terminal.kill", "when": "terminalFocus" },
     { "key": "ctrl+shift+/", "command": "workbench.files.action.showActiveFileInExplorer"},
     { "key": "shift+alt+l", "command": "editor.action.transformToLowercase"},
