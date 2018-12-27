@@ -41,7 +41,6 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.historyExplorer.enabled": true,
     "editor.tabCompletion": "on",
     "vim.leader": "<space>",
     "vim.useSystemClipboard": true,
@@ -62,6 +61,16 @@
         {
             "before": ["<CR>"],
             "after": ["<Esc>"]
+        },
+        {
+            "before": ["y"],
+            "after": ["ygv", "<Esc>"]
         }
     ],
+    "gitlens.views.lineHistory.enabled": false,
+    "gitlens.views.repositories.files.layout": "tree",
+    "gitlens.views.compare.enabled": false,
+    "gitlens.views.repositories.enabled": false,
+    "gitlens.views.search.enabled": false,
+    "gitlens.views.fileHistory.enabled": true,
 }
