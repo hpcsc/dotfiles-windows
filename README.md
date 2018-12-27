@@ -5,7 +5,7 @@ An attempt to automate installation of essential softwares and settings for new 
 ## To backup VSCode extensions
 
 ```
-code --list-extensions > vscode-extensions
+code --list-extensions > vscode-extensions.txt
 ```
 
 ## For a new Windows setup
