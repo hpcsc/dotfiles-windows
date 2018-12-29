@@ -5,6 +5,12 @@ cmd /c mklink (Join-Path $Env:APPDATA "Code\User\keybindings.json") (Resolve-Pat
 
 Write-Host "Installing Visual Studio Code Extensions..." -ForegroundColor "Yellow"
 Get-Content ./vscode-extensions.txt | Foreach-Object { code --install-extension $_ }
+Write-Host "Uninstalling Visual Studio Code Extensions that are not in the list..." -ForegroundColor "Yellow"
+Compare-Object -ReferenceObject (code --list-extensions) `
+               -DifferenceObject (Get-Content ./vscode-extensions.txt) `
+               -PassThru | `
+        Where-Object { $_.SideIndicator -eq '<=' } | `
+        ForEach-Object { code --uninstall-extension $_ }
 
 Write-Host "Restoring gitconfig..." -ForegroundColor "Yellow"
 cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gitconfig").Path
