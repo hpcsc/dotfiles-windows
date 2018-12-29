@@ -136,31 +136,31 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-    'pane:splitVertical': 'ctrl+d',
-    'pane:splitHorizontal': 'ctrl+shift+d',
-    'pane:next': 'ctrl+]',
-    'pane:prev': 'ctrl+[',
-    'pane:close': 'ctrl+w',
-    'tab:new': 'ctrl+t',
+    'pane:splitVertical': 'alt+d',
+    'pane:splitHorizontal': 'alt+shift+d',
+    'pane:next': 'alt+]',
+    'pane:prev': 'alt+[',
+    'pane:close': 'alt+w',
+    'tab:new': 'alt+t',
     'tab:next': [
-      'ctrl+shift+]',
+      'alt+shift+]',
       'ctrl+shift+right',
       'ctrl+alt+right',
       'ctrl+tab',
       'ctrl+alt+]'
     ],
     'tab:prev': [
-      'ctrl+shift+[',
+      'alt+shift+[',
       'ctrl+shift+left',
       'ctrl+alt+left',
       'ctrl+shift+tab',
       'ctrl+alt+['
     ],
-    'editor:undo': 'ctrl+z',
-    'editor:redo': 'ctrl+shift+z',
-    'editor:cut': 'ctrl+x',
-    'editor:copy': 'ctrl+c',
-    'editor:paste': 'ctrl+v',
+    'editor:undo': 'alt+z',
+    'editor:redo': 'alt+shift+z',
+    'editor:cut': 'alt+x',
+    'editor:copy': 'alt+c',
+    'editor:paste': 'alt+v',
     'editor:clearBuffer': 'ctrl+k'
   }
 };
