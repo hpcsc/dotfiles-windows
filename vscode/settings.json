@@ -64,7 +64,7 @@
         },
         {
             "before": ["y"],
-            "after": ["ygv", "<Esc>"]
+            "after": ["y", "g", "v", "<Esc>"]
         }
     ],
     "gitlens.views.lineHistory.enabled": false,
