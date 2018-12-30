@@ -30,3 +30,10 @@ function Update-User-Variable($value) {
 function Get-User-Variable($key) {
     [Environment]::GetEnvironmentVariable($key, [System.EnvironmentVariableTarget]::User)
 }
+
+function File-Contains-Text($filePath, $text)
+{
+    $file = Get-Content $filePath
+    $containsWord = $file | %{$_ -match $text}
+    return ($containsWord -contains $true)
+}
