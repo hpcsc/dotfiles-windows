@@ -34,4 +34,9 @@ Set-ItemProperty $explorerKey ShowRecent 0                  # Disable "Show rece
 Set-ItemProperty $explorerKey ShowFrequent 0                # Disable "Show frequently used folders in Quick access"
 Remove-Variable explorerKey
 
+$keyboardKey = 'HKCU:\Control Panel\Keyboard'
+Set-ItemProperty $keyboardKey KeyboardDelay 0                # This value is in the range from 0 (approximately 250 millisecond delay) through 3 (approximately 1 second delay)
+Set-ItemProperty $keyboardKey KeyboardSpeed 31               # This is a value in the range from 0 (approximately 2.5 repetitions per second) through 31 (approximately 30 repetitions per second)
+Remove-Variable keyboardLayout
+
 Stop-Process -processname explorer
