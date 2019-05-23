@@ -17,7 +17,14 @@ Remove-Variable storeAppsToRemove
 Write-Host "Mapping Capslock to LeftCtrl..." -ForegroundColor "Yellow"
 $scancodeMapHexValue = "00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00".Split(',') | ForEach-Object { "0x$_"}
 $keyboardLayout = 'HKLM:\System\CurrentControlSet\Control\Keyboard Layout'
-New-ItemProperty -Path $keyboardLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$scancodeMapHexValue)
+if (Test-Path $keyboardLayout)
+{
+    Set-ItemProperty $keyboardLayout "Scancode Map" ([byte[]]$scancodeMapHexValue)
+}
+else
+{
+    New-ItemProperty -Path $keyboardLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$scancodeMapHexValue)
+}
 Remove-Variable scancodeMapHexValue
 Remove-Variable keyboardLayout
 
@@ -37,6 +44,6 @@ Remove-Variable explorerKey
 $keyboardKey = 'HKCU:\Control Panel\Keyboard'
 Set-ItemProperty $keyboardKey KeyboardDelay 0                # This value is in the range from 0 (approximately 250 millisecond delay) through 3 (approximately 1 second delay)
 Set-ItemProperty $keyboardKey KeyboardSpeed 31               # This is a value in the range from 0 (approximately 2.5 repetitions per second) through 31 (approximately 30 repetitions per second)
-Remove-Variable keyboardLayout
+Remove-Variable keyboardKey
 
 Stop-Process -processname explorer
