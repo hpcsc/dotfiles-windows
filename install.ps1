@@ -15,3 +15,5 @@ choco install googlechrome firefox 7zip.install dropbox 1password vlc malwarebyt
 
 Write-Host "Installing development tools..." -ForegroundColor "Yellow"
 choco install VisualStudioCode linqpad docker-for-windows dotnetcore-sdk nvm jetbrainstoolbox velocity boostnote jdk8 hyper
+
+refreshenv
