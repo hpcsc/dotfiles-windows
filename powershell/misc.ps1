@@ -33,6 +33,11 @@ function Get-User-Variable($key) {
 
 function File-Contains-Text($filePath, $text)
 {
+    if (!(Test-Path $filePath))
+    {
+        return $false
+    }
+
     $file = Get-Content $filePath
     $containsWord = $file | %{$_ -match $text}
     return ($containsWord -contains $true)
