@@ -1,13 +1,13 @@
 if (Get-Command choco -errorAction SilentlyContinue)
 {
-    Write-Host "Installing Chocolatey..." -ForegroundColor "Yellow"
-    Set-ExecutionPolicy Bypass; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    choco feature enable -n=allowGlobalConfirmation
+    Write-Host "Upgrading Chocolatey..." -ForegroundColor "Yellow"
+    choco upgrade -y chocolatey
 }
 else
 {
-    Write-Host "Upgrading Chocolatey..." -ForegroundColor "Yellow"
-    choco upgrade -y chocolatey
+    Write-Host "Installing Chocolatey..." -ForegroundColor "Yellow"
+    Set-ExecutionPolicy Bypass; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco feature enable -n=allowGlobalConfirmation
 }
 
 Write-Host "Installing essential softwares..." -ForegroundColor "Yellow"
