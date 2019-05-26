@@ -73,4 +73,5 @@
     "gitlens.views.repositories.enabled": false,
     "gitlens.views.search.enabled": false,
     "gitlens.views.fileHistory.enabled": true,
+    "diffEditor.renderSideBySide": false,
 }
