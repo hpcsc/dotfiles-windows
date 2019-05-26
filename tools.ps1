@@ -27,9 +27,10 @@ if (!(Test-Path (Join-Path $Env:USERPROFILE ".gitconfig") -PathType Leaf))
 }
 
 Write-Host "Restoring Hyper Settings..." -ForegroundColor "Yellow"
-if (!(Test-Path (Join-Path $Env:USERPROFILE ".hyper.js") -PathType Leaf))
+$hyperConfigPath = Join-Path $Env:APPDATA "Hyper/.hyper.js"
+if (!(Test-Path $hyperConfigPath -PathType Leaf))
 {
-        cmd /c mklink (Join-Path $Env:USERPROFILE ".hyper.js") (Resolve-Path ".\hyper\.hyper.js").Path
+        cmd /c mklink $hyperConfigPath (Resolve-Path ".\hyper\.hyper.js").Path
 }
 
 Write-Host "Add Hyper to User Path Variable..." -ForegroundColor "Yellow"
