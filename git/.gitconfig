@@ -1,6 +1,7 @@
 [core]
 	editor = code --wait
 	autocrlf = true
+	attributesfile = C:\\dotfiles-windows\\git\\.gitattributes
 [credential]
 	helper = manager
 [user]
@@ -12,3 +13,9 @@
 	autoStash = true
 [diff]
 	mnemonicprefix = true
+[alias]
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
+  unhide-all = update-index --really-refresh
+  hidden = !git ls-files -v | grep \"^[a-z]\"
+  ignored = !git status -s --ignored | grep \"^!!\"
