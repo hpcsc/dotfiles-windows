@@ -38,7 +38,7 @@ code --list-extensions > vscode-extensions.txt
 - Pin MultiCommander to taskbar, modify `Target` in Properties to:
 
 ```
-path\to\MultiCommander.exe -AutoRun="Split 100/0" C:\
+C:\tools\MultiCommander\MultiCommander.exe -F="C:\tools\MultiCommander\startup.ini" -AutoRun="Split 100/0"
 ```
 
 This will open MultiCommander in 100/0 single split mode and at C:\ drive when starting up
