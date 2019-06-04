@@ -8,6 +8,12 @@ function BackUpAndSymlink($folderRelativePath, $fileName) {
     if (Test-Path $destinationFile)
     {
         Write-Host "$destinationFile exists, renaming existing file to $fileName.bk" -ForegroundColor "Yellow"
+        $backUpFile=Join-Path $folderAbsolutePath "$fileName.bk"
+        if (Test-Path $backUpFile)
+        {
+            Write-Host "$backUpFile exists, deleting" -ForegroundColor "Yellow"
+            Remove-Item $backUpFile
+        }
         Rename-Item $destinationFile "$fileName.bk"
     }
     cmd /c mklink $destinationFile (Resolve-Path ".\MultiCommander\$folderRelativePath\$fileName").Path
