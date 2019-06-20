@@ -51,3 +51,7 @@ This will open MultiCommander in 100/0 single split mode and at C:\ drive when s
     ```
     cmd /c mklink Link\to\explorer++\folder\config.xml (Resolve-Path ".\explorer++\config.xml").Path
     ```
+
+### Shutdown script
+
+Add shortcut to taskbar that points to `dotfiles-windows/shutdown/shutdown.cmd`
