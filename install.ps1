@@ -14,6 +14,6 @@ Write-Host "Installing essential softwares..." -ForegroundColor "Yellow"
 choco install googlechrome firefox 7zip.install dropbox 1password vlc malwarebytes foxitreader authy-desktop greenshot
 
 Write-Host "Installing development tools..." -ForegroundColor "Yellow"
-choco install VisualStudioCode linqpad docker-for-windows dotnetcore-sdk nvm jetbrainstoolbox velocity boostnote jdk8 hyper
+choco install VisualStudioCode linqpad docker-for-windows dotnetcore-sdk nvm jetbrainstoolbox velocity boostnote jdk8 hyper neovim
 
 refreshenv
