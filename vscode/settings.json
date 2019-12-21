@@ -29,7 +29,7 @@
     "workbench.list.openMode": "doubleClick",
     "editor.fontSize": 16,
     "search.location": "panel",
-    "workbench.colorTheme": "NaturalContrast-HC",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "gitlens.keymap": "alternate",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -74,4 +74,5 @@
     "gitlens.views.search.enabled": false,
     "gitlens.views.fileHistory.enabled": true,
     "diffEditor.renderSideBySide": false,
+    "yaml.format.enable": true
 }
