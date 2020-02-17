@@ -42,3 +42,10 @@ function File-Contains-Text($filePath, $text)
     $containsWord = $file | %{$_ -match $text}
     return ($containsWord -contains $true)
 }
+
+$ESC = [char]27
+$STARTCOLOR = "[38;2"
+function prompt()
+{
+  "$($executionContext.SessionState.Path.CurrentLocation) $ESC$STARTCOLOR;245;78;66m❯$ESC$STARTCOLOR;245;120;66m❯$ESC$STARTCOLOR;105;245;66m❯$ESC[0m "
+}
