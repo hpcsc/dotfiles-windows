@@ -43,9 +43,18 @@ function File-Contains-Text($filePath, $text)
     return ($containsWord -contains $true)
 }
 
-$ESC = [char]27
-$STARTCOLOR = "[38;2"
+$EscapeCharacter = [char]27
+$BeginningOfColorText = "[38;2;"
+$ArrowSymbol = [char]::ConvertFromUtf32(0x276F)
 function prompt()
 {
-  "$($executionContext.SessionState.Path.CurrentLocation) $ESC$STARTCOLOR;245;78;66m❯$ESC$STARTCOLOR;245;120;66m❯$ESC$STARTCOLOR;105;245;66m❯$ESC[0m "
+  "$($executionContext.SessionState.Path.CurrentLocation) $(Get-ColorArrow("245;78;66"))$(Get-ColorArrow("245;120;66"))$(Get-ColorArrow("105;245;66"))${EscapeCharacter}[0m "
+}
+
+
+function Get-ColorArrow(
+    $ColorInRGB
+)
+{
+    "${EscapeCharacter}${BeginningOfColorText}${ColorInRGB}m${ArrowSymbol}"
 }
