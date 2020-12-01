@@ -28,7 +28,6 @@
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     "workbench.list.openMode": "doubleClick",
     "editor.fontSize": 16,
-    "search.location": "panel",
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "gitlens.keymap": "alternate",
     "gitlens.advanced.messages": {
@@ -53,7 +52,7 @@
     "vim.disableExtension": false,
     "vim.normalModeKeyBindings": [
         {
-            "before": ["<leader>", "y"],
+            "before": ["<leader>", "<space>"],
             "after": ["o", "<Esc>"]
         }
     ],
@@ -67,6 +66,7 @@
             "after": ["y", "g", "v", "<Esc>"]
         }
     ],
+    "vim.hlsearch": true,
     "gitlens.views.lineHistory.enabled": false,
     "gitlens.views.repositories.files.layout": "tree",
     "gitlens.views.compare.enabled": false,
