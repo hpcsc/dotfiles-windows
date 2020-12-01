@@ -1,15 +1,79 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    { "key": "shift+ctrl+r",           "command": "workbench.action.tasks.runTask" },
-    { "key": "ctrl+u ctrl+n",                "command": "workbench.action.files.newUntitledFile" },
-    { "key": "alt+right", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
-    { "key": "alt+left", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
-    { "key": "ctrl+w", "command": "workbench.action.terminal.kill", "when": "terminalFocus" },
-    { "key": "ctrl+shift+/", "command": "workbench.files.action.showActiveFileInExplorer"},
-    { "key": "shift+alt+l", "command": "editor.action.transformToLowercase"},
-    { "key": "shift+alt+u", "command": "editor.action.transformToUppercase"},
-    { "key": "ctrl+,", "command": "workbench.action.openGlobalSettings" },
-    { "key": "ctrl+j", "command": "editor.action.joinLines" },
-    { "key": "alt+k", "command": "deleteAllRight" },
-    { "key": "alt+backspace", "command": "deleteAllLeft" }
+    {
+        "key": "shift+ctrl+r",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "ctrl+u ctrl+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.clear",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+alt+m",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.openGlobalSettings"
+    }
 ]
