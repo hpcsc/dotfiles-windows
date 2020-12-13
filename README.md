@@ -26,6 +26,10 @@ code --list-extensions > vscode-extensions.txt
 
 ## Optional Tools
 
+### Windows Terminal
+
+Execute `.\windows-terminal\setup.ps1` to copy settings.json to Windows Terminal settings location
+
 ### MultiCommander
 
 - Download MultiCommander (portable version) and put it in a location that doesn't require admin permission, .e.g. `C:\tools\MultiCommander`
