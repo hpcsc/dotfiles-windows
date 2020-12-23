@@ -12,31 +12,39 @@
 		{
 			"command": "closeTab",
 			"keys": [
-				"ctrl+shift+w"
+				"alt+shift+w"
 			]
 		},
 		{
 			"command": "newTab",
 			"keys": [
-				"ctrl+t"
+				"alt+t"
 			]
 		},
 		{
 			"command": "closeOtherTabs",
 			"keys": [
-				"ctrl+shift+t"
+				"alt+shift+t"
 			]
+		},
+		{
+			"command": "nextTab",
+			"keys": "shift+alt+]"
+		},
+		{
+			"command": "prevTab",
+			"keys": "shift+alt+["
 		},
 		{
 			"command": "find",
 			"keys": [
-				"ctrl+f"
+				"alt+f"
 			]
 		},
 		{
 			"command": "closePane",
 			"keys": [
-				"ctrl+w"
+				"alt+w"
 			]
 		},
 		{
@@ -45,7 +53,7 @@
 				"split": "horizontal",
 				"splitMode": "duplicate"
 			},
-			"keys": "ctrl+shift+d"
+			"keys": "alt+shift+d"
 		},
 		{
 			"command": {
@@ -53,7 +61,35 @@
 				"split": "vertical",
 				"splitMode": "duplicate"
 			},
-			"keys": "ctrl+d"
+			"keys": "alt+d"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "down"
+			},
+			"keys": "shift+alt+j"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "left"
+			},
+			"keys": "shift+alt+h"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "right"
+			},
+			"keys": "shift+alt+l"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "up"
+			},
+			"keys": "shift+alt+k"
 		}
 	],
 	"profiles": [
