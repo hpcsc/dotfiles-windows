@@ -36,9 +36,11 @@ function di() { docker container inspect $args }
 function de() { docker container exec $args }
 function dl() { docker container logs $args }
 function dit() { docker container run -it $args }
+function drmb() { docker container rm (docker container ps -a --filter name=$args -q) }
 
 function dils() { docker image ls $args }
 function dirm() { docker image rm $args }
+function dirm() { docker image rm (docker images --filter reference=*${args}* -q) }
 
 function dnls() { docker network ls $args }
 function dni() { docker network inspect $args }
