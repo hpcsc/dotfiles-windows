@@ -86,5 +86,19 @@
         "key": "alt+s",
         "command": "workbench.action.files.save",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "alt+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported"
     }
 ]
