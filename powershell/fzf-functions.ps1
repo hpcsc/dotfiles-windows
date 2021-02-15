@@ -40,6 +40,11 @@ function fdrm() {
 }
 
 function fdirm() {
+    $danglingImages = docker images -f "dangling=true" -q
+    if (! [string]::IsNullOrWhitespace($danglingImages)) {
+        docker image rm $danglingImages
+    }
+
     $selected = docker images --format '{{.Repository}}:{{.Tag}}' | `
                     Invoke-Fzf -Multi -Exit0 -Layout reverse -Preview "docker images --filter `"reference={}`"" -PreviewWindow "down:30%"
 
