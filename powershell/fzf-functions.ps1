@@ -1,5 +1,6 @@
+# these functions relies on PSFzf: https://github.com/kelleyma49/PSFzf
+
 function fsb() {
-    # this function relies on PSFzf: https://github.com/kelleyma49/PSFzf
     $selected = git branch -a --list --format='%(refname:short)' --ignore-case "*${args}*" | `
                     Where-Object { $_ -NotMatch "HEAD" } | `
                     Invoke-Fzf -Select1 -Exit0 -Layout reverse
@@ -13,7 +14,6 @@ function fsb() {
 }
 
 function frb() {
-    # this function relies on PSFzf: https://github.com/kelleyma49/PSFzf
     $selected = git branch --list --format='%(refname:short)' --ignore-case "*${args}*" | `
                     Invoke-Fzf -Multi -Exit0 -Layout reverse
 
@@ -22,6 +22,32 @@ function frb() {
     } else {
         $selected.Split(' ') | ForEach-Object {
             git branch -D $_
+        }
+    }
+}
+
+function fdrm() {
+    $selected = docker ps -a --format '{{.Names}}' | `
+                    Invoke-Fzf -Multi -Exit0 -Layout reverse -Preview "docker ps -a -f `"name={}`"" -PreviewWindow "down:30%"
+
+    if ([string]::IsNullOrWhitespace($selected)) {
+        Write-Host "No container selected" -Foreground Yellow
+    } else {
+        $selected.Split(' ') | ForEach-Object {
+            docker container rm $_
+        }
+    }
+}
+
+function fdirm() {
+    $selected = docker images --format '{{.Repository}}:{{.Tag}}' | `
+                    Invoke-Fzf -Multi -Exit0 -Layout reverse -Preview "docker images --filter `"reference={}`"" -PreviewWindow "down:30%"
+
+    if ([string]::IsNullOrWhitespace($selected)) {
+        Write-Host "No image selected" -Foreground Yellow
+    } else {
+        $selected.Split(' ') | ForEach-Object {
+            docker image rm $_
         }
     }
 }
