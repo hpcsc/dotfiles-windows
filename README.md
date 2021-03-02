@@ -47,15 +47,6 @@ C:\tools\MultiCommander\MultiCommander.exe -F="C:\tools\MultiCommander\startup.i
 
 This will open MultiCommander in 100/0 single split mode and at C:\ drive when starting up
 
-### Explorer++
-
-- Download `Explorer++`
-- Create symlink to config file
-
-    ```
-    cmd /c mklink Link\to\explorer++\folder\config.xml (Resolve-Path ".\explorer++\config.xml").Path
-    ```
-
 ### Shutdown script
 
 Add shortcut to taskbar that points to `dotfiles-windows/shutdown/shutdown.cmd`
