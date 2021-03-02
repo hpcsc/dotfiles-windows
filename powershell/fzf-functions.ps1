@@ -56,3 +56,30 @@ function fdirm() {
         }
     }
 }
+
+function fcm() {
+    if ([string]::IsNullOrWhiteSpace(${args})) {
+        Write-Host "Commit message is required" -Foreground Red
+        return
+    }
+
+    $coauthorsFilePath = "$HOME\.git-co-authors"
+    if (! (Test-Path $coauthorsFilePath)) {
+        Write-Host "File $coauthorsFilePath does not exist" -Foreground Red
+        return
+    }
+
+    $selected = Get-Content $coauthorsFilePath |
+            fzf -m --layout=reverse |
+            ForEach-Object {
+                "co-authored-by: $_"
+            }
+
+    if ($selected.Length -eq 0) {
+        Write-Host "No coauthor selected" -Foreground Red
+        return
+    }
+
+    $coauthorsMessage = $selected -join "`n"
+    git commit -m "${args}`n`n${coauthorsMessage}"
+}
