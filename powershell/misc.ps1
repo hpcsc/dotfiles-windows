@@ -2,10 +2,6 @@ function PSAdmin() {
     Start-Process powershell "-NoExit", "-Command", "Set-Location $((Resolve-Path .\).Path)" -Verb runAs
 }
 
-function HyperAdmin() {
-    As-Admin("hyper")
-}
-
 function As-Admin($processName) {
     Start-Process $processName -WindowStyle hidden -Verb runAs
 }
@@ -57,7 +53,6 @@ function prompt()
     $arrows = "$(Get-ColorArrow("245;78;66"))$(Get-ColorArrow("245;120;66"))$(Get-ColorArrow("105;245;66"))"
     "$($executionContext.SessionState.Path.CurrentLocation)$gitPrompt $arrows "
 }
-
 
 function Get-ColorArrow(
     $ColorInRGB
