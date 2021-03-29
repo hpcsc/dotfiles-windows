@@ -48,7 +48,14 @@ $BeginningOfColorText = "[38;2;"
 $ArrowSymbol = [char]::ConvertFromUtf32(0x276F)
 function prompt()
 {
-  "$($executionContext.SessionState.Path.CurrentLocation) $(Get-ColorArrow("245;78;66"))$(Get-ColorArrow("245;120;66"))$(Get-ColorArrow("105;245;66"))${EscapeCharacter}[0m "
+    $currentGitBranch = git rev-parse --abbrev-ref HEAD
+    $gitPrompt = if ([string]::IsNullOrWhiteSpace($currentGitBranch)) {
+        ""
+    } else {
+        " $(Get-ColorText "105;245;66" "[$currentGitBranch]")"
+    }
+    $arrows = "$(Get-ColorArrow("245;78;66"))$(Get-ColorArrow("245;120;66"))$(Get-ColorArrow("105;245;66"))"
+    "$($executionContext.SessionState.Path.CurrentLocation)$gitPrompt $arrows "
 }
 
 
@@ -56,5 +63,13 @@ function Get-ColorArrow(
     $ColorInRGB
 )
 {
-    "${EscapeCharacter}${BeginningOfColorText}${ColorInRGB}m${ArrowSymbol}"
+    Get-ColorText $ColorInRGB $ArrowSymbol
+}
+
+function Get-ColorText(
+    $ColorInRGB,
+    $Text
+)
+{
+    "${EscapeCharacter}${BeginningOfColorText}${ColorInRGB}m${Text}${EscapeCharacter}[0m"
 }
