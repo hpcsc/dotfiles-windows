@@ -1,29 +1,32 @@
-Write-Host "Restoring Visual Studio Code Settings..." -ForegroundColor "Yellow"
-New-Item -Path (Join-Path $Env:APPDATA "Code\User") -ItemType directory -Force
-
-if (!(Test-Path (Join-Path $Env:APPDATA "Code\User\settings.json") -PathType Leaf))
+function SetupVSCode()
 {
+    Write-Host "Restoring Visual Studio Code Settings..." -ForegroundColor "Yellow"
+    New-Item -Path (Join-Path $Env:APPDATA "Code\User") -ItemType directory -Force
+
+    if (!(Test-Path (Join-Path $Env:APPDATA "Code\User\settings.json") -PathType Leaf))
+    {
         cmd /c mklink (Join-Path $Env:APPDATA "Code\User\settings.json") (Resolve-Path ".\vscode\settings.json").Path
-}
+    }
 
-if (!(Test-Path (Join-Path $Env:APPDATA "Code\User\keybindings.json") -PathType Leaf))
-{
+    if (!(Test-Path (Join-Path $Env:APPDATA "Code\User\keybindings.json") -PathType Leaf))
+    {
         cmd /c mklink (Join-Path $Env:APPDATA "Code\User\keybindings.json") (Resolve-Path ".\vscode\keybindings.json").Path
-}
+    }
 
-Write-Host "Installing Visual Studio Code Extensions..." -ForegroundColor "Yellow"
-Get-Content ./vscode-extensions.txt | Foreach-Object { code --install-extension $_ }
-Write-Host "Uninstalling Visual Studio Code Extensions that are not in the list..." -ForegroundColor "Yellow"
-Compare-Object -ReferenceObject (code --list-extensions) `
-               -DifferenceObject (Get-Content ./vscode-extensions.txt) `
-               -PassThru | `
-        Where-Object { $_.SideIndicator -eq '<=' } | `
-        ForEach-Object { code --uninstall-extension $_ }
+    Write-Host "Installing Visual Studio Code Extensions..." -ForegroundColor "Yellow"
+    Get-Content ./vscode-extensions.txt | Foreach-Object { code --install-extension $_ }
+    Write-Host "Uninstalling Visual Studio Code Extensions that are not in the list..." -ForegroundColor "Yellow"
+    Compare-Object -ReferenceObject (code --list-extensions) `
+                    -DifferenceObject (Get-Content ./vscode-extensions.txt) `
+                    -PassThru | `
+                    Where-Object { $_.SideIndicator -eq '<=' } | `
+                    ForEach-Object { code --uninstall-extension $_ }
 
-if (!(Test-Path (Join-Path $Env:USERPROFILE ".gitconfig") -PathType Leaf))
-{
+    if (!(Test-Path (Join-Path $Env:USERPROFILE ".gitconfig") -PathType Leaf))
+    {
         Write-Host "Restoring gitconfig..." -ForegroundColor "Yellow"
         cmd /c mklink (Join-Path $Env:USERPROFILE ".gitconfig") (Resolve-Path ".\git\.gitconfig").Path
+    }
 }
 
 # Create context menu to open Hyper when right clicking any folder
@@ -36,10 +39,17 @@ if (!(Test-Path (Join-Path $Env:USERPROFILE ".gitconfig") -PathType Leaf))
 # }
 # Pop-Location # restore to previous path
 
-if (!(File-Contains-Text $PROFILE "custom functions"))
+function SetupPrompt()
 {
+    $profilePath = $PROFILE.CurrentUserAllHosts
+    if (!(File-Contains-Text $profilePath "custom functions"))
+    {
         Write-Host "Updating Powershell Profile..." -ForegroundColor "Yellow"
         $powershellFolder = (Resolve-Path ".\powershell").Path
-        Add-Content $PROFILE "# Loading custom functions"
-        Add-Content $PROFILE "Get-ChildItem `"$powershellFolder\*.ps1`" | %{.`$_}"
+        Add-Content $profilePath "# Loading custom functions"
+        Add-Content $profilePath "Get-ChildItem `"$powershellFolder\*.ps1`" | %{.`$_}"
+    }
 }
+
+SetupVSCode
+SetupPrompt
