@@ -68,3 +68,17 @@ function Get-ColorText(
 {
     "${EscapeCharacter}${BeginningOfColorText}${ColorInRGB}m${Text}${EscapeCharacter}[0m"
 }
+
+function Load-Env() {
+    Get-Content .\.env | Where-Object { ![string]::IsNullOrWhiteSpace($_) } | ForEach-Object {
+        $splitted = $_.Split("=")
+        [Environment]::SetEnvironmentVariable($splitted[0], $splitted[1], [System.EnvironmentVariableTarget]::Process)
+        Write-Host "Set environment variable $(${splitted}[0])" -Fore Green
+    }
+}
+
+function gbls() {
+    git branch --format='%(refname:short)' |
+        Select-Object @{ Name="Branch"; Expression={$_} },
+                      @{ Name="Description"; Expression={git config "branch.$_.description" | Out-String} }
+}
