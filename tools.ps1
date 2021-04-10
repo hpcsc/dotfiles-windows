@@ -39,7 +39,7 @@ function SetupVSCode()
 # }
 # Pop-Location # restore to previous path
 
-function SetupPrompt()
+function SetupPowershellProfile()
 {
     $profilePath = $PROFILE.CurrentUserAllHosts
     if (!(File-Contains-Text $profilePath "custom functions"))
@@ -52,4 +52,4 @@ function SetupPrompt()
 }
 
 SetupVSCode
-SetupPrompt
+SetupPowershellProfile
