@@ -76,3 +76,39 @@ function gbls() {
     Select-Object @{ Name = "Branch"; Expression = { $_ } },
     @{ Name = "Description"; Expression = { git config "branch.$_.description" | Out-String } }
 }
+
+function batect-here() {
+    (Invoke-WebRequest https://api.github.com/repos/batect/batect/releases/latest | ConvertFrom-Json).assets |
+    Where-Object { $_.name -eq "batect" -or $_.name -eq "batect.cmd" } |
+    Select-Object @{ Name = "Url"; Expression = { $_.browser_download_url } },
+    @{ Name = "Name"; Expression = { $_.name } } |
+    ForEach-Object { Invoke-WebRequest $_.Url -OutFile $_.Name }
+
+    @"
+project_name: $((Get-Item -Path .).BaseName)
+
+containers:
+  withBuildDirectory:
+    build_directory: .
+    volumes:
+      - local: .
+        container: /app
+        options: cached
+    working_directory: /app
+
+  withImage:
+    image: some-image
+    volumes:
+      - local: .
+        container: /app
+        options: cached
+    working_directory: /app
+
+tasks:
+  sampleTask:
+    description: some description
+    run:
+      container: withImage
+      command: some-command
+"@ | Set-Content ./batect.yml
+}
