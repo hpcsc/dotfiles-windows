@@ -111,4 +111,12 @@ tasks:
       container: withImage
       command: some-command
 "@ | Set-Content ./batect.yml
+
+    @"
+# Shell scripts require LF
+*.sh    text eol=lf
+# Batch scripts require CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+"@ | Set-Content ./.gitattributes
 }
