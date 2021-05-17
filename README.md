@@ -17,12 +17,22 @@ code --list-extensions > vscode-extensions.txt
     ```
 
 2. Clone this repository
-3. Open Powershell as Administrator, navigate to cloned directory, execute:
+3. Open Powershell as Administrator, execute:
+
+    ```
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ```
+
+4. Navigate to cloned directory, execute:
 
     ```
     .\bootstrap.ps1
     ```
-4. Install `IntelliJ`, `Rider` using `Jetbrains Toolbox` and import settings from github: https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository
+
+## Checklist after installation
+
+- Jetbrains toolbox setup
+- Import GPG key
 
 ## Optional Tools
 
