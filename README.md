@@ -29,6 +29,8 @@ code --list-extensions > vscode-extensions.txt
     .\bootstrap.ps1
     ```
 
+5. Execute `.\power-settings.ps1` if this is laptop configuration
+
 ## Checklist after installation
 
 - Jetbrains toolbox setup
