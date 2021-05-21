@@ -39,10 +39,20 @@ function SetupVSCode()
 # }
 # Pop-Location # restore to previous path
 
+function Contains-Text($filePath, $text) {
+    if (!(Test-Path $filePath)) {
+        return $false
+    }
+
+    $file = Get-Content $filePath
+    $containsWord = $file | % { $_ -match $text }
+    return ($containsWord -contains $true)
+}
+
 function SetupPowershellProfile()
 {
     $profilePath = $PROFILE.CurrentUserAllHosts
-    if (!(File-Contains-Text $profilePath "custom functions"))
+    if (!(Contains-Text $profilePath "custom functions"))
     {
         Write-Host "Updating Powershell Profile..." -ForegroundColor "Yellow"
         $powershellFolder = (Resolve-Path ".\powershell").Path
